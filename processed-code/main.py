@@ -62,7 +62,6 @@ def capture_and_segment(segmenter):
             break
 
 
-
     # 웹캠 및 모든 창 닫기
     webcam.release()
     cv2.destroyAllWindows()

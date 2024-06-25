@@ -80,3 +80,4 @@ with vision.ImageSegmenter.create_from_options(options) as segmenter:
 
     print(f'Segmentation mask of {image_file_name}:')
     resize_and_show(output_image)
+    

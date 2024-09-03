@@ -15,7 +15,7 @@ cap.set(4, 720)   # Height resolution
 
 # locad the encoding file
 print("Loading Encode File ...")
-file = open('/Users/kevinliam/Desktop/Kevin’s MacBook Air/development/inbody-scale-ai/face_recognition/src/EncodeFile.p', 'rb')
+file = open('/Users/kevinliam/Desktop/Kevin’s MacBook Air/development/inbody-scale-ai/faceRecognition/src/EncodeFile.p', 'rb')
 encodeListWithKnownWithIds = pickle.load(file)
 file.close()
 encodeListKnown, personIds = encodeListWithKnownWithIds

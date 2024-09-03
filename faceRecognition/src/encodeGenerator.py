@@ -5,24 +5,6 @@ import pickle
 
 from firebaseInit import initializeFirebase
 
-_, storage = initializeFirebase()
-bucket = storage.bucket()
-
-# importing the mode images into a list
-folderPath = './imgs'
-PathList = os.listdir(folderPath)
-imgList = []
-personIds = []
-for path in PathList:
-    imgList.append(cv2.imread(os.path.join(folderPath, path)))
-    personIds.append(os.path.splitext(path)[0])
-
-    fileName = f'{folderPath}/{path}' # os.path.join(folderPath, path)
-    bucket = storage.bucket()
-    blob = bucket.blob(fileName)
-    blob.upload_from_filename(fileName)
-
-
 def findEncodings(imagesList):
     encodeList = []
     for img in imagesList:
@@ -32,10 +14,29 @@ def findEncodings(imagesList):
     
     return encodeList
 
+
+_, storage = initializeFirebase()
+bucket = storage.bucket()
+
+# importing the mode images into a list
+folderPath = '/Users/kevinliam/Desktop/Kevin’s MacBook Air/development/inbody-scale-ai/faceRecognition/imgs'
+PathList = os.listdir(folderPath)
+imgList = []
+personIds = []
+for path in PathList:
+    imgList.append(cv2.imread(os.path.join(folderPath, path)))
+    personIds.append(os.path.splitext(path)[0])
+
+    fileName = f'{folderPath}/{path}'
+    bucket = storage.bucket()
+    blob = bucket.blob(fileName)
+    blob.upload_from_filename(fileName)
+
 print("Encoding Started ...")
 encodeListKnown = findEncodings(imgList)
 encodeListKnownWithIds = [encodeListKnown, personIds]
 print("Encoding Complete")
+print(encodeListKnownWithIds)
 
 file = open("EncodeFile.p", 'wb')
 pickle.dump(encodeListKnownWithIds, file)

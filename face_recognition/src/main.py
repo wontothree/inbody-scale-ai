@@ -2,14 +2,11 @@ import cv2
 import numpy as np
 import face_recognition
 import pickle
-import cvzone
 
 from firebaseInit import initializeFirebase
 
-
 db, storage = initializeFirebase()
 bucket = storage.bucket()
-
 
 # Set camera capture
 cap = cv2.VideoCapture(0)  # Ensure you are using the correct camera index

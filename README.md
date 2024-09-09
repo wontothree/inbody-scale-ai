@@ -1,4 +1,4 @@
-# A computer vision AI solution for the new 'InBody Scale AI'
+# InBody Scale AI
 
 ![](./icons/inbody-scale-ai.png)
 

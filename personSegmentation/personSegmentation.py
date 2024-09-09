@@ -1,8 +1,8 @@
 import cv2
 import math
 import numpy as np
-import mediapipe as mp
 
+import mediapipe as mp
 from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 
@@ -73,3 +73,56 @@ class PersonSegmentation:
     def process_images(self, image_filenames):
         for image_file_name in image_filenames:
             self.print_highest_pixel(image_file_name)
+    
+    # real time capture and segmentation
+    def capture_and_segment(self):
+        # 웹캠 초기화
+        webcam = cv2.VideoCapture(0)
+
+        while True:
+            # 웹캠에서 새로운 프레임을 가져옴
+            ret, frame = webcam.read()
+
+            if not ret:
+                print("프레임을 가져올 수 없습니다.")
+                break
+
+            print("사용 방법:")
+            print("'s' 키를 입력하여 세그멘테이션을 수행하고 가장 높은 픽셀을 출력합니다.")
+            print("'q' 키를 입력하여 프로그램을 종료합니다.")
+
+            # 프레임을 보여줌
+            cv2.imshow("Webcam Feed", frame)
+
+            # waiting key 's'
+            key = cv2.waitKey(1) & 0xFF
+
+            if key == ord('s'):
+                print("Segmentation Start")
+
+                # file name being storaging
+                image_file_name = 'currentFrame.jpg'
+                
+                # save current frame to image file with image_file_name
+                cv2.imwrite(image_file_name, frame)
+
+                # semantic segmentation
+                category_mask = self.segment_image(image_file_name)
+
+                # finding highest pixel for height estimation
+                highest_pixel = self.find_highest_pixel(category_mask)
+                print(f'-------------------------------- 가장 높은 픽셀: {highest_pixel} --------------------------------')
+
+            # quit using key 'q'
+            elif key == ord('q'):
+                break
+
+        # close webcam and every window
+        webcam.release()
+        cv2.destroyAllWindows()
+
+if __name__ == "__main__":
+    personSegmentation = PersonSegmentation(model_path='/Users/kevinliam/Desktop/Kevin’s MacBook Air/development/inbody-scale-ai/personSegmentation/deeplabv3.tflite')
+
+    # 웹캠에서 이미지 캡처 및 세그멘테이션 수행
+    personSegmentation.capture_and_segment()

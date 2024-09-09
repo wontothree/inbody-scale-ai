@@ -1,6 +1,6 @@
 # InBody Scale AI
 
-![image-right](./icon/inbody-scale-ai-1.png)
+![image-right](./icon/inbody-scale-ai.png)
 
 Jan. 2024 - Jan. 2025
 

@@ -3,10 +3,9 @@
     faceRecognition
     ├── imgs/                                       # images folder
     ├── src/            
-    |     ├── main.py                               # opencv and face_recognition codes
-    |     ├── addDataToDatabase.py                  # add data to Firebase
+    |     ├── faceIdentification.py                 # opencv and face_recognition codes
+    |     ├── firebase.py                           # add data to Firebase
     |     ├── encodeGenerator.py                    # firebase storage에서 저장된 사진으로 encoding을 추출하여 .p 파일로 저장한다.
-    |     ├── firebaseInit.py                       # initialize Firebase Admin SDK and return object for accessing Firebase
     |     ├── serviceAccountKey.json                # authority for Firebase
     |     ├── Encode.p                              # 
 
@@ -54,7 +53,7 @@ pip install numpy
 ```
 
 ```bash
-pip install cv2
+pip install opencv-python
 ```
 
 ```bash

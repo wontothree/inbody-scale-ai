@@ -87,11 +87,7 @@ if __name__ == "__main__":
                 print(personInfo['usage_count'])
                 ref.child('usage_count').set(personInfo['usage_count'])
             
-            # if personInfo is not None:
             cv2.putText(img, str(personInfo['name']), (861, 125), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 255, 255), 1) 
-
-            # if blob is not None:
-            # imgBackground[175 : 175 + 216, 909 : 909 + 216] = imgPerson
             
             print(personInfo)
             counter += 1

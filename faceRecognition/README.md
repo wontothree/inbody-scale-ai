@@ -46,6 +46,14 @@ database
 # Dependencies
 
 ```bash
+pip install -r requirements.txt
+```
+
+```bash
+pip install numpy
+```
+
+```bash
 pip install cv2
 ```
 

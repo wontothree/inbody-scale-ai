@@ -3,7 +3,9 @@ import cv2
 import face_recognition
 import pickle
 
-from firebaseInit import initializeFirebase
+from firebase import FireBase
+
+firebase = FireBase()
 
 def findEncodings(imagesList):
     encodeList = []
@@ -15,7 +17,7 @@ def findEncodings(imagesList):
     return encodeList
 
 
-_, storage = initializeFirebase()
+_, storage = firebase.initializeFirebase()
 bucket = storage.bucket()
 
 # importing the mode images into a list

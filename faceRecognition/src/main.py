@@ -3,9 +3,11 @@ import numpy as np
 import face_recognition
 import pickle
 
-from firebaseInit import initializeFirebase
+from firebase import FireBase
 
-db, storage = initializeFirebase()
+firebase = FireBase()
+
+db, storage = firebase.initializeFirebase()
 bucket = storage.bucket()
 
 # Set camera capture
@@ -19,7 +21,6 @@ file = open('/Users/kevinliam/Desktop/Kevin’s MacBook Air/development/inbody-s
 encodeListWithKnownWithIds = pickle.load(file)
 file.close()
 encodeListKnown, personIds = encodeListWithKnownWithIds
-# print(personIds)
 print("Encode File Loaded")
 
 modeType = 0

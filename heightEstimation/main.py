@@ -129,7 +129,7 @@ def person_segmentation_for_webcam():
 
 
 def tracking_and_segmentation():
-    segmenter = PersonSegmentation(model_path='./person_segmentation/deeplabv3.tflite')
+    segmenter = PersonSegmentation(model_path='/Users/kevinliam/Desktop/Kevin’s MacBook Air/development/inbody-scale-ai/heightEstimation/personSegmentation/deeplabv3.tflite')
     webcam = cv2.VideoCapture(0)
     gaze = GazeTracking()
 

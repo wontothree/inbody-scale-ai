@@ -122,7 +122,7 @@ class PersonSegmentation:
         cv2.destroyAllWindows()
 
 if __name__ == "__main__":
-    personSegmentation = PersonSegmentation(model_path='/Users/kevinliam/Desktop/Kevin’s MacBook Air/development/inbody-scale-ai/personSegmentation/deeplabv3.tflite')
+    personSegmentation = PersonSegmentation(model_path='/Users/kevinliam/Desktop/Kevin’s MacBook Air/development/inbody-scale-ai/heightEstimation/personSegmentation/deeplabv3.tflite')
 
     # 웹캠에서 이미지 캡처 및 세그멘테이션 수행
     personSegmentation.capture_and_segment()

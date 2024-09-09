@@ -1,7 +1,7 @@
 import cv2
 import os
-from gaze_tracking.gaze_tracking import GazeTracking
-from person_segmentation.person_segmentation import PersonSegmentation
+from gazeTracking.gaze_tracking import GazeTracking
+from personSegmentation.personSegmentation import PersonSegmentation
 
 def gaze_tracking_for_image():
 

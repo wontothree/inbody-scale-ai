@@ -46,24 +46,28 @@ database
 
 ```bash
 pip install -r requirements.txt
-```
 
-```bash
 pip install numpy
-```
 
-```bash
 pip install opencv-python
-```
 
-```bash
 pip install face_recognition
-```
 
-```bash
 pip install pickle
+
+pip install firebase_admin
 ```
 
+# Research Note
+
+2024.09.24
+
+문제 Jetson Nano에서 모델 추론을 하는 데 너무 많은 시간이 소요되며 부정확하다. 카메라를 켜는 순간부터 버벅거림이 심하다.
+
+Jetson Nano는 RAM이 4GB밖에 없어서 dlib을 컴파일하는 데 충분하지 않습니다. 이를 해결하기 위해 swapfile을 생성하여 디스크 공간을 추가 RAM처럼 사용할 수 있게 설정할 것입니다.
+
 ```bash
-pip install firebase_admin
+git clone https://github.com/JetsonHacksNano/installSwapfile
+
+./installSwapfile/installSwapfile.sh
 ```

@@ -17,9 +17,37 @@ data = {
              "last_using_time" : "2024-08-31 00:00:01",
              "usage_count" : 12,
         },
-    "555555" :
+    "111112" :
         {
-             "name" : "Sewon Kim",
+             "name" : "김영진",
+             "age" : 24,
+             "last_using_time" : "2024-09-01 00:00:01",
+             "usage_count" : 15,
+        },
+    "111113" :
+        {
+             "name" : "박승서",
+             "age" : 21,
+             "last_using_time" : "2024-09-01 00:00:01",
+             "usage_count" : 15,
+        },
+    "111114" :
+        {
+             "name" : "설민관",
+             "age" : 21,
+             "last_using_time" : "2024-09-01 00:00:01",
+             "usage_count" : 15,
+        },
+    "111115" :
+        {
+             "name" : "이원준",
+             "age" : 21,
+             "last_using_time" : "2024-09-01 00:00:01",
+             "usage_count" : 15,
+        },
+    "111115" :
+        {
+             "name" : "임수홍",
              "age" : 21,
              "last_using_time" : "2024-09-01 00:00:01",
              "usage_count" : 15,
@@ -47,3 +75,4 @@ class FireBase():
 if __name__ == "__main__":
     firebase = FireBase()
     firebase.upload_data_to_firebase(data)
+    print("upload image to firebase")

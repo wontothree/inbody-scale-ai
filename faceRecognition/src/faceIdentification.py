@@ -43,7 +43,6 @@ if __name__ == "__main__":
         faceCurFrame = face_recognition.face_locations(imgS)
         encodeCurFrame = face_recognition.face_encodings(imgS, faceCurFrame)
 
-
         for encodeFace, faceLoc in zip(encodeCurFrame, faceCurFrame):
             matches = face_recognition.compare_faces(encodeListKnown, encodeFace)
             faceDis = face_recognition.face_distance(encodeListKnown, encodeFace)
@@ -66,7 +65,6 @@ if __name__ == "__main__":
                     modeType = 1
 
         if counter != 0:
-
             if counter == 1:
                 # get the data from database
                 personInfo = db.reference(f'Person/{id}').get()

@@ -1,5 +1,6 @@
 import cv2
 import os
+
 from gazeTracking.gaze_tracking import GazeTracking
 from personSegmentation.personSegmentation import PersonSegmentation
 
@@ -37,9 +38,6 @@ def gaze_tracking_for_image():
             break
 
     cv2.destroyAllWindows()
-
-
-
 
 def gaze_tracking_for_webcam():
 
@@ -79,8 +77,6 @@ def gaze_tracking_for_webcam():
     
     webcam.release()
     cv2.destroyAllWindows()
-
-
 
 def person_segmentation_for_webcam():
 
@@ -124,12 +120,8 @@ def person_segmentation_for_webcam():
     webcam.release()
     cv2.destroyAllWindows()
 
-
-
-
-
 def tracking_and_segmentation():
-    segmenter = PersonSegmentation(model_path='/Users/kevinliam/Desktop/Kevin’s MacBook Air/development/inbody-scale-ai/heightEstimation/personSegmentation/deeplabv3.tflite')
+    segmenter = PersonSegmentation(model_path='heightEstimation/personSegmentation/deeplabv3.tflite')
     webcam = cv2.VideoCapture(0)
     gaze = GazeTracking()
 
